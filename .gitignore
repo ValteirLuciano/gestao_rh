@@ -4,6 +4,6 @@
 
 venv
 
-__pycache__
+gestao_rh/__pycache__
 
 *.pyc

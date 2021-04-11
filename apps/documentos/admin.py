@@ -4,4 +4,4 @@ from .models import Documento
 
 @admin.register(Documento)
 class DocumentoAdmin(admin.ModelAdmin):
-    list_display = ('descricao',)
+    list_display = ('descricao', 'funcionario')
