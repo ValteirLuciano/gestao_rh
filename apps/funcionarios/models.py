@@ -6,9 +6,9 @@ from apps.empresas.models import Empresa
 
 class Funcionario(models.Model):
     nome = models.CharField('Nome', max_length=100)
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.PROTECT)
     departamentos = models.ManyToManyField(Departamneto)
-    empresa = models.ForeignKey(Empresa, on_delete=models.CASCADE)
+    empresa = models.ForeignKey(Empresa, on_delete=models.PROTECT, null=True, blank=True)
 
     class Meta:
         verbose_name = 'Funcionario'
