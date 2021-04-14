@@ -5,7 +5,7 @@ from .models import Empresa
 from django.urls import reverse_lazy
 
 
-class EmpresaCreate(CreateView):
+class EmpresaCreateView(CreateView):
     model = Empresa
     fields = ['nome',]
     #success_url = reverse_lazy('home')
@@ -18,7 +18,7 @@ class EmpresaCreate(CreateView):
         return HttpResponse('Ok')
 
 
-class EmpresaEdit(UpdateView):
+class EmpresaUpdateView(UpdateView):
     model = Empresa
     fields = ['nome', ]
     success_url = reverse_lazy('home')

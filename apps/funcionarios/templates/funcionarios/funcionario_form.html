@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block main %}
+
+    <h1>Relação dos Funcionários</h1>
+
+    <form method="post">
+        {% csrf_token %}
+
+        {{ form }}
+
+        <button type="submit">Salvar</button>
+
+    </form>
+{% endblock %}
