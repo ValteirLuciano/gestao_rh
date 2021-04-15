@@ -1,8 +1,11 @@
 from django.db import models
+from apps.empresas.models import Empresa
 
 
-class Departamneto(models.Model):
+class Departamento(models.Model):
     nome = models.CharField('Nome', max_length=70)
+    empresa = models.ForeignKey(Empresa, on_delete=models.PROTECT)
+
 
     class Meta:
         verbose_name = 'Departamento'
