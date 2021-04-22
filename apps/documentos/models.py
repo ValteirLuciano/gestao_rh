@@ -1,14 +1,20 @@
 from django.db import models
+from django.shortcuts import reverse
+
 from apps.funcionarios.models import Funcionario
 
 
 class Documento(models.Model):
     descricao = models.CharField('Descrição', max_length=100)
-    funcionario = models.ForeignKey(Funcionario, on_delete=models.PROTECT)
+    funcionrio = models.ForeignKey(Funcionario, on_delete=models.PROTECT)
+    arquivo = models.FileField(upload_to='documentos')
+
+    def get_absolute_url(self):
+        return reverse('update_funcionario', args=[self.funcionrio.id])
+
+    def __str__(self):
+        return self.descricao
 
     class Meta:
         verbose_name = 'Documento'
         verbose_name_plural = 'Documentos'
-
-    def __str__(self):
-        return self.descricao

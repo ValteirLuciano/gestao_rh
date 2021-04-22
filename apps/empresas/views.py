@@ -7,8 +7,8 @@ from django.urls import reverse_lazy
 
 class EmpresaCreateView(CreateView):
     model = Empresa
-    fields = ['nome',]
-    #success_url = reverse_lazy('home')
+    fields = ['nome']
+    success_url = reverse_lazy('home')
 
     def form_valid(self, form):
         obj = form.save()

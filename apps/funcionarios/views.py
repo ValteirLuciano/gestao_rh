@@ -11,7 +11,7 @@ class FuncionariosListView(ListView):
 
     def get_queryset(self):
         empresa_logada = self.request.user.funcionario.empresa
-        return Funcionario.objects.filter(empresa= empresa_logada)
+        return Funcionario.objects.filter(empresa=empresa_logada)
 
 
 class FuncionarioCreateView(CreateView):

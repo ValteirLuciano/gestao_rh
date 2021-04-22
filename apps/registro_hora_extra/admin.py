@@ -4,4 +4,4 @@ from .models import RegistroHoraExtra
 
 @admin.register(RegistroHoraExtra)
 class RegistroHoraExtraAdmin(admin.ModelAdmin):
-    list_display = ('motivo', 'funcionario')
+    list_display = ('motivo', 'funcionario', 'horas')

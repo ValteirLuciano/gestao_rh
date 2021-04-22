@@ -10,15 +10,17 @@
             Olá, {{ usuario.funcionario.nome }}
             <a href="{% url 'list_funcionarios' %}">Gerenciar Funcionários</a> <br/>
             <a href="{% url 'list_departamentos' %}">Gerenciar Departamentos</a> <br/>
+            <a href="{% url 'list_hora_extra' %}">Gerenciar Banco de Horas</a> <br/>
+
         </div>
 
         <div class="col-sm">
            <a href="{% url 'logout' %}">Logout</a>
 
             {% if usuario.funcionario.empresa %}
-                <a href="{% url 'edit_empresa' usuario.funcionario.empresa.id %}">Editar Empresa</a>
+                <a href="{% url 'update_empresa' usuario.funcionario.empresa.id %}">Editar Empresa</a>
                 {% else %}
-                <a href="{% url 'create_empresa' %}">Criar Empresa</a>
+                    <a href="{% url 'create_empresa' %}">Criar Empresa</a>
             {% endif %}
         </div>
 

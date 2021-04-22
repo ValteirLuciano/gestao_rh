@@ -3,14 +3,21 @@
 
 {% block main %}
 
-    <h1>Relação dos Funcionários</h1>
+    <h1>Gerenciamento de Funcionário</h1>
 
     <form method="post">
         {% csrf_token %}
 
         {{ form|bootstrap }}
 
-        <button type="submit">Salvar</button>
+        <button type="submit" class="btn btn-info">Salvar</button>
 
     </form>
+    {% if object %}
+        <a href="{% url 'create_documento' object.id %}" class="btn btn-success" >Adicionar Documento</a>
+    {% endif %}
+    <br>
+    {% for documento in object.documento_set.all %}
+        <a href="{{ documento.arquivo.url }} "> {{ documento.descricao }}  </a><br>
+    {% endfor %}
 {% endblock %}

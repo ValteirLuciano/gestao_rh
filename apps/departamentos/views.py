@@ -15,7 +15,7 @@ class DepartamentoListView(ListView):
 
 class DepartamentoCreateView(CreateView):
     model = Departamento
-    fields = ['nome',]
+    fields = ['nome']
     success_url = reverse_lazy('list_departamentos')
 
     def form_valid(self, form):
@@ -27,7 +27,7 @@ class DepartamentoCreateView(CreateView):
 
 class DepartamentoUpdateView(UpdateView):
     model = Departamento
-    fields = ['nome',]
+    fields = ['nome']
     success_url = reverse_lazy('list_departamentos')
 
 

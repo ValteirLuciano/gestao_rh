@@ -1,19 +1,21 @@
 {% extends 'base.html' %}
+{% load bootstrap %}
 
 {% block main %}
 
-    <h1>Gerenciamento de Departamento</h1>
+    <h1>Gerenciamento de horas extras</h1>
 
     <form method="post">
         {% csrf_token %}
 
-        {{ form }}
+        {{ form|bootstrap }}
 
         <button type="submit" class="btn btn-info">Salvar</button>
 
         {% if objetc %}
-            <a href="{% url 'delete_departamento' object.id %}" class="btn btn-danger">Deletar</a>
+            <a href="{% url 'delete_hora_extra' object.id %}" class="btn btn-danger">Deletar</a>
         {% endif %}
 
     </form>
+
 {% endblock %}

@@ -3,8 +3,8 @@ from .views import DepartamentoListView, DepartamentoCreateView,DepartamentoUpda
 
 
 urlpatterns = [
-    path('list', DepartamentoListView.as_view(), name='list_departamentos'),
+    path('', DepartamentoListView.as_view(), name='list_departamentos'),
     path('novo', DepartamentoCreateView.as_view(), name='create-departamento'),
-    path('editar/<int:pk>/', DepartamentoUpdateView.as_view(), name='update_departamento'),
+    path('update/<int:pk>/', DepartamentoUpdateView.as_view(), name='update_departamento'),
     path('delete/<int:pk>/', DepartamentoDeleteView.as_view(), name='delete_departamento'),
 ]
